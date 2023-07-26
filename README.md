@@ -11,6 +11,8 @@ We have two types of elements :
    h1,p,div - block elements(which takes who width)
 
 hr - line
+
+
 any tag is of form:
 
 ```
