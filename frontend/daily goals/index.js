@@ -1,6 +1,6 @@
 const title = document.getElementById("title");
 const description = document.getElementById("description");
-
+const name = document.querySelector("h1");
 const form = document.querySelector("form");
 const container = document.querySelector(".container");
 const containery = document.querySelector(".containery");
@@ -54,7 +54,7 @@ const addTask = (task, index) => {
 
   containery.append(taskDiv);
 };
-
+name.innerText = prompt("Enter your name:");
 allTasks(); //this call is to display tasks from local
 
 form.addEventListener("submit", (e) => {
