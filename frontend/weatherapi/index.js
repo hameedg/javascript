@@ -22,7 +22,7 @@ const fetchData = async () => {
     const condition = data.days[0].description;
     updateDom(temperature, city, date, condition);
   } catch (error) {
-    alert(error.message);
+    alert("Please enter a valid city or check the spelling");
   }
 
   //   console.log(data.resolvedAddress);
