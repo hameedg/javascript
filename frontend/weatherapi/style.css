@@ -61,7 +61,33 @@
     padding-top: 2rem;
 }
 
+.select{
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+    gap: 20px;
+}
+.select2{
+    position: absolute;
+    bottom: 130px;
+    display: flex;
+    padding-left: 2rem;
+ 
+    justify-content: flex-start;
+    width: 100%;
+  
+   
+}
+.tag{
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 20px;
 
+}
 
 nav{
     height: 100px;

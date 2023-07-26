@@ -5,7 +5,7 @@ const conditionEl = document.querySelector(".weather3");
 const btn = document.getElementById("search");
 
 const container = document.querySelector(".container");
-
+const select = document.querySelector(".select");
 const searchEl = document.getElementById("search");
 const form = document.querySelector("form");
 
@@ -16,10 +16,26 @@ const fetchData = async () => {
     const response = await fetch(url);
     const data = await response.json();
     const city = data.resolvedAddress.split(",")[0];
+    const total = data.resolvedAddress.split(",");
+
+    select.innerHTML = "";
+    
+    total.map((e) => {
+      const tag = document.createElement("button");
+      tag.classList.add("tag");
+      tag.innerText = e;
+      tag.addEventListener("click", () => {
+        place = tag.innerText;
+        fetchData();
+      });
+      select.appendChild(tag);
+    });
+
     //   console.log(data.resolvedAddress.split(" ")[0]);
     const temperature = data.days[0].temp;
     const date = data.days[0].datetime;
     const condition = data.days[0].description;
+
     updateDom(temperature, city, date, condition);
   } catch (error) {
     alert("Please enter a valid city or check the spelling");
