@@ -43,5 +43,6 @@ const search = (e) => {
   e.preventDefault();
   place = searchEl.value;
   fetchData();
+  searchEl.value = "";
 };
 form.addEventListener("submit", search);
