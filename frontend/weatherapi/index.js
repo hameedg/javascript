@@ -11,16 +11,19 @@ const form = document.querySelector("form");
 
 let place = "tolichoki";
 const fetchData = async () => {
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${place}?unitGroup=metric&key=RM3K5LUWNAZWUKRLYTFD7ZUU5&contentType=json`;
-  const response = await fetch(url);
-  const data = await response.json();
-  const city = data.resolvedAddress.split(",")[0];
-  //   console.log(data.resolvedAddress.split(" ")[0]);
-  const temperature = data.days[0].temp;
-  const date = data.days[0].datetime;
-  const condition = data.days[0].description;
-  updateDom(temperature, city, date, condition);
- 
+  try {
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${place}?unitGroup=metric&key=RM3K5LUWNAZWUKRLYTFD7ZUU5&contentType=json`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const city = data.resolvedAddress.split(",")[0];
+    //   console.log(data.resolvedAddress.split(" ")[0]);
+    const temperature = data.days[0].temp;
+    const date = data.days[0].datetime;
+    const condition = data.days[0].description;
+    updateDom(temperature, city, date, condition);
+  } catch (error) {
+    alert(error);
+  }
 
   //   console.log(data.resolvedAddress);
 
