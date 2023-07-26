@@ -32,7 +32,7 @@ const fetchData = async () => {
   //   console.log(data.days[0].datetime);
   //   console.log(data.days[0].temp);
 };
-
+fetchData();
 function updateDom(temperature, city, date, condition) {
   temperatureEl.innerText = `${temperature}°`;
   cityEl.innerText = city;
