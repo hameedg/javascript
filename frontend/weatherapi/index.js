@@ -22,7 +22,7 @@ const fetchData = async () => {
     const condition = data.days[0].description;
     updateDom(temperature, city, date, condition);
   } catch (error) {
-    alert(error);
+    alert(error.message);
   }
 
   //   console.log(data.resolvedAddress);
